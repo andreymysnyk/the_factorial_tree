@@ -251,7 +251,7 @@ module.exports = {
     *                                                                          *
     ***************************************************************************/
     onlyAllowOrigins: [
-      'https://the-factorial-tree.herokuapp.com/'
+      'https://the-factorial-tree.herokuapp.com',
     ],
 
 
