@@ -21,6 +21,9 @@
 
 module.exports = {
 
+  paths: {
+    public: 'assets/dist'
+  },
 
   /**************************************************************************
   *                                                                         *
@@ -251,7 +254,7 @@ module.exports = {
     *                                                                          *
     ***************************************************************************/
     onlyAllowOrigins: [
-      'https://the-factorial-tree.herokuapp.com',
+      'https://the-factorial-tree.herokuapp.com'
     ],
 
 

@@ -13,7 +13,9 @@
     "@sailshq/connect-redis": "^3.2.1",
     "@sailshq/socket.io-redis": "^5.2.0",
     "@sailshq/lodash": "^3.10.3",
-    "async": "2.0.1"
+    "async": "2.0.1",
+    "@angular/cli": "~1.7.4",
+    "@angular/compiler-cli": "^5.2.0"
   },
   "devDependencies": {
     "@sailshq/eslint": "^4.19.3"
@@ -22,7 +24,8 @@
     "start": "NODE_ENV=production node app.js",
     "test": "npm run lint && npm run custom-tests && echo 'Done.'",
     "lint": "eslint . --max-warnings=0 --report-unused-disable-directives && echo '✔  Your .js files look good.'",
-    "custom-tests": "echo \"(No other custom tests yet.)\" && echo"
+    "custom-tests": "echo \"(No other custom tests yet.)\" && echo",
+    "postinstall": "cd assets && npm install && ng build -prod"
   },
   "main": "app.js",
   "repository": {
