@@ -1,4 +1,5 @@
 var sails = require('sails');
+var async = require('async');
 
 // Before running any tests...
 before(function(done) {
@@ -21,8 +22,9 @@ before(function(done) {
       }
     },
     models: {
+      dontUseObjectIds: true,
       attributes: {
-        id: { type: 'number', autoIncrement: true }
+        id: { type: 'number', autoIncrement: true, columnName: 'id' }
       }
     }
   }, function(err) {
@@ -35,12 +37,22 @@ before(function(done) {
   });
 });
 
+beforeEach(function(done) {
+  // Clean database between each test
+  async.series([
+    function (cb) {
+      Tree.destroy({}).exec(cb);
+    },
+    function (cb) {
+      TreeProperty.destroy({}).exec(cb);
+    }
+  ], done);
+});
+
 // After all tests have finished...
 after(function(done) {
-
   // here you can clear fixtures, etc.
   // (e.g. you might want to destroy the records you created above)
 
   sails.lower(done);
-
 });
