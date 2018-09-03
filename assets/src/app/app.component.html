@@ -3,3 +3,20 @@
     Welcome to the begging of <b>The Factorial Tree</b>
   </h2>
 </div>
+
+<mat-card class="wrapper-card">
+  <mat-tab-group [selectedIndex]="selected.value" (selectedIndexChange)="selected.setValue($event)">
+
+    <mat-tab *ngFor="let tab of tabs; let index = index" [label]="tab">
+      Contents for {{tab}} tab
+    </mat-tab>
+
+    <mat-tab disabled>
+      <ng-template mat-tab-label>
+        <button mat-button (click)="addTab()">
+          <mat-icon svgIcon="baseline-add"></mat-icon>
+        </button>
+      </ng-template>
+    </mat-tab>
+  </mat-tab-group>
+</mat-card>

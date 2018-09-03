@@ -1,0 +1,18 @@
+.wrapper-card {
+  width: 60%;
+  height: 400px;
+  margin: 0 auto;
+}
+
+@media (max-width: 800px) {
+  .wrapper-card {
+    width: 80%;
+  }
+}
+
+@media (max-width: 500px) {
+  .wrapper-card {
+    width: auto;
+    margin: 0;
+  }
+}
